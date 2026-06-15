@@ -86,3 +86,25 @@ end tell
 2. Click "Start" on simulated workout.
 3. Fast-forward steps or play simulated telemetry.
 4. Stop activity and check FIT file summary outputs.
+
+---
+
+## 7. Settings Verification (Programmatic Override)
+Since the Connect IQ App Settings Editor is written in Java and opaque to macOS AppleScript System Events, settings can be fully exercised by programmatically modifying `resources/properties.xml`, recompiling, clearing simulator settings cache, and redeploying.
+
+### Executable Python Automation Script
+The test script is located in the scratch directory:
+`scratch/run_settings_tests_epix2.py`
+
+#### Commands:
+```bash
+# Run settings test suite (compiles, deletes cached settings, deploys with settings mapping, and takes screenshots for all 4 settings combinations)
+python3 scratch/run_settings_tests_epix2.py
+```
+
+The script will exercise:
+- **defaults**: Baseline settings (White background, Pace Mode, HR instant).
+- **dark_mode**: Dark Mode setting enabled (Black background).
+- **hr_zone_60s_avg**: Colored HR Zones enabled with a 60s heart rate average.
+- **speed_display**: Speed display mode enabled (replaces pace rendering with speed).
+
