@@ -6,10 +6,15 @@ description: Executable walkthrough to test all features of the Walker data fiel
 # Walker Functionality Test Plan
 
 ## 1. Setup
-Deploy Walker on the target device in the simulator:
+To deploy Walker on the target device in the simulator with settings support, compile using `monkeyc` and then run `monkeydo` while passing the settings JSON mapping using the `-a` argument (this is crucial for the App Settings Editor to locate the settings):
 ```bash
-PATH="/Users/wwarby/Library/Application Support/Garmin/ConnectIQ/Sdks/connectiq-sdk-mac-9.2.0-2026-06-09-92a1605b2/bin:/opt/homebrew/opt/openjdk@17/bin:$PATH" monkeydo bin/walker-fenix5.prg fenix5
+# Compile (example for epix2)
+PATH="/Users/wwarby/Library/Application Support/Garmin/ConnectIQ/Sdks/connectiq-sdk-mac-9.2.0-2026-06-09-92a1605b2/bin:/opt/homebrew/opt/openjdk@17/bin:$PATH" monkeyc -f monkey.jungle -y /Users/wwarby/ConnectIQ/developer_key.der -o bin/walker-epix2.prg -d epix2
+
+# Deploy with settings mapping
+PATH="/Users/wwarby/Library/Application Support/Garmin/ConnectIQ/Sdks/connectiq-sdk-mac-9.2.0-2026-06-09-92a1605b2/bin:/opt/homebrew/opt/openjdk@17/bin:$PATH" monkeydo bin/walker-epix2.prg epix2 -a "bin/walker-epix2-settings.json:GARMIN/Settings/walker-epix2-settings.json"
 ```
+
 
 ---
 
