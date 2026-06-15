@@ -1,5 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
-	<string id="appName">ที่ช่วยเดิน</string>
+	<string id="appName">Walker</string>
 	<string id="steps">ขั้นตอน</string>
 	<string id="stepsUnits">ขั้นตอน</string>
 	<string id="pace">ก้าว</string>
@@ -9,7 +10,7 @@
 	<string id="heartRateModeTitle">โหมดอัตราการเต้นของหัวใจ</string>
 	<string id="showHeartRateZoneTitle">โซนอัตราการเต้นของหัวใจ</string>
 	<string id="showSpeedInsteadOfPace">ใช้ความเร็ว</string>
-	<string id="darkMode">สีดำ</string>
+	<string id="darkMode">ใช้พื้นหลังสีดำ</string>
 	<string id="modeInstant">ทันที</string>
 	<string id="mode5Seconds">เฉลี่ย 5 วินาที</string>
 	<string id="mode10Seconds">เฉลี่ย 10 วินาที</string>

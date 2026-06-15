@@ -1,5 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
-	<string id="appName">Vaikštynė</string>
+	<string id="appName">Walker</string>
 	<string id="steps">Žingsniai</string>
 	<string id="stepsUnits">žingsniai</string>
 	<string id="pace">TEMPAS</string>
@@ -9,7 +10,7 @@
 	<string id="heartRateModeTitle">Širdies ritmo režimas</string>
 	<string id="showHeartRateZoneTitle">Rodyti širdies ritmo zoną</string>
 	<string id="showSpeedInsteadOfPace">Naudokite greitį</string>
-	<string id="darkMode">Juoda</string>
+	<string id="darkMode">Naudoti juodą foną</string>
 	<string id="modeInstant">Momentinis</string>
 	<string id="mode5Seconds">5s vidurkis</string>
 	<string id="mode10Seconds">10s vidurkis</string>

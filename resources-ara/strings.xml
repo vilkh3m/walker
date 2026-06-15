@@ -1,15 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
-	<string id="appName">ووكر</string>
+	<string id="appName">Walker</string>
 	<string id="steps">خطوات</string>
 	<string id="stepsUnits">خطوات</string>
-	<string id="pace">سرعة</string>
+	<string id="pace">الوتيرة</string>
 	<string id="speed">السرعة</string>
 	<string id="timer">عداد</string>
 	<string id="paceOrSpeedModeTitle">السرعة / وضع السرعة</string>
 	<string id="heartRateModeTitle">وضع معدل ضربات القلب</string>
 	<string id="showHeartRateZoneTitle">إظهار منطقة معدل ضربات القلب</string>
 	<string id="showSpeedInsteadOfPace">استخدم السرعة</string>
-	<string id="darkMode">أسود</string>
+	<string id="darkMode">استخدام خلفية سوداء</string>
 	<string id="modeInstant">حالي</string>
 	<string id="mode5Seconds">متوسط ​​5 ثوان</string>
 	<string id="mode10Seconds">متوسط ​​10 ثوان</string>

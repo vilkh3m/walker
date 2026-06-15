@@ -87,10 +87,11 @@ class WalkerView extends Ui.DataField {
 		
 		// If the activity has restarted after "resume later", load previously stored steps values
 		if (info != null && info.elapsedTime > 0) {
-			steps = Application.Properties.getValue("as");
-			activityStepsAtPreviousLap = Application.Properties.getValue("ls");
+			steps = getPropertySafe("as");
+			activityStepsAtPreviousLap = getPropertySafe("ls");
 			if (steps == null) { steps = 0; }
 			if (lapSteps == null) { lapSteps = 0; }
+			if (activityStepsAtPreviousLap == null) { activityStepsAtPreviousLap = 0; }
 			// Consolidate the previously stored steps, otherwise we will lose them when steps are next calculated
 			consolidatedSteps = steps;
 		}
@@ -98,12 +99,52 @@ class WalkerView extends Ui.DataField {
 		var stepsUnits = Ui.loadResource(Rez.Strings.stepsUnits);
 		
 		// Create FIT contributor fields
-		stepsActivityField = createField("steps", 0, Fit.DATA_TYPE_UINT32, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
-		stepsLapField = createField("steps", 1, Fit.DATA_TYPE_UINT32, { :mesgType => Fit.MESG_TYPE_LAP, :units => stepsUnits });
+		try {
+			stepsActivityField = createField("steps", 0, Fit.DATA_TYPE_UINT32, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
+		} catch (e) {
+			stepsActivityField = null;
+		}
+		try {
+			stepsLapField = createField("steps", 1, Fit.DATA_TYPE_UINT32, { :mesgType => Fit.MESG_TYPE_LAP, :units => stepsUnits });
+		} catch (e) {
+			stepsLapField = null;
+		}
 
 		// Set initial steps FIT contributions to zero
-		stepsActivityField.setData(0);
-		stepsLapField.setData(0);
+		if (stepsActivityField != null) { stepsActivityField.setData(0); }
+		if (stepsLapField != null) { stepsLapField.setData(0); }
+
+		// Create the rest of the FIT fields
+		var deviceSettings = System.getDeviceSettings();
+		try {
+			stepsPerKmOrMileField = createField(
+				deviceSettings.distanceUnits == System.UNIT_METRIC ? "stepsPerKm" : "stepsPerMile",
+				deviceSettings.distanceUnits == System.UNIT_METRIC ? 2 : 3,	Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_RECORD, :units => stepsUnits });
+		} catch (e) {
+			stepsPerKmOrMileField = null;
+		}
+		try {
+			stepsPerHourField = createField("stepsPerHour", 4, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_RECORD, :units => stepsUnits });
+		} catch (e) {
+			stepsPerHourField = null;
+		}
+		try {
+			averageStepsPerKmOrMileField = createField(
+				deviceSettings.distanceUnits == System.UNIT_METRIC ? "avgStepsPerKm" : "avgStepsPerMile",
+				deviceSettings.distanceUnits == System.UNIT_METRIC ? 5 : 6, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
+		} catch (e) {
+			averageStepsPerKmOrMileField = null;
+		}
+		try {
+			averageStepsPerHourField = createField("avgStepsPerHour", 7, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
+		} catch (e) {
+			averageStepsPerHourField = null;
+		}
+
+		if (stepsPerKmOrMileField != null) { stepsPerKmOrMileField.setData(0); }
+		if (stepsPerHourField != null) { stepsPerHourField.setData(0); }
+		if (averageStepsPerKmOrMileField != null) { averageStepsPerKmOrMileField.setData(0); }
+		if (averageStepsPerHourField != null) { averageStepsPerHourField.setData(0); }
 	}
 	
 	// Called on initialization and when settings change (from a hook in WalkerApp.mc)
@@ -115,62 +156,30 @@ class WalkerView extends Ui.DataField {
 		is24Hour = deviceSettings.is24Hour;
 		
 		// Dark mode
-		darkModeFromSetting = Application.Properties.getValue("d") == true;
+		darkModeFromSetting = getPropertySafe("d") == true;
 		
 		// Speed / pace mode 
-		paceOrSpeedMode = Application.Properties.getValue("pm");
+		paceOrSpeedMode = getPropertySafe("pm");
 		if (paceOrSpeedMode > 0) {
 			paceOrSpeedData = new DataQueue(paceOrSpeedMode, true);
 		} else {
 			paceOrSpeedData = null;
 		}
 		
-		heartRateMode = Application.Properties.getValue("hm");
+		heartRateMode = getPropertySafe("hm");
 		if (heartRateMode > 0) {
 			heartRateData = new DataQueue(heartRateMode, true);
 		} else {
 			heartRateData = null;
 		}
 		
-		showHeartRateZone = Application.Properties.getValue("z");
-		showSpeedInsteadOfPace = Application.Properties.getValue("s");
+		showHeartRateZone = getPropertySafe("z");
+		showSpeedInsteadOfPace = getPropertySafe("s");
 		
 		kmOrMileInMetersDistance = deviceSettings.distanceUnits == System.UNIT_METRIC ? 1000.0f : 1609.34f;
 		kmOrMileInKmPace = deviceSettings.paceUnits == System.UNIT_METRIC ? 1.0f : 1.60934f;
 		distanceUnitsLabel = Ui.loadResource(deviceSettings.distanceUnits == System.UNIT_METRIC ? Rez.Strings.km : Rez.Strings.mi);
 		averagePaceOrSpeedUnitsLabel = "/" + Ui.loadResource(showSpeedInsteadOfPace ? Rez.Strings.h : deviceSettings.paceUnits == System.UNIT_METRIC ? Rez.Strings.km : Rez.Strings.mi);
-		
-		// Short circuit if we have already created our FIT contributor fields and the distance unit setting hasn't changed
-		if (deviceSettings.distanceUnits == previousDistanceUnits) { return; }
-		
-		// Create FIT contributor fields
-		
-		try {
-			var stepsUnits = Ui.loadResource(Rez.Strings.stepsUnits);
-			
-			stepsPerKmOrMileField = createField(
-				deviceSettings.distanceUnits == System.UNIT_METRIC ? "stepsPerKm" : "stepsPerMile",
-				deviceSettings.distanceUnits == System.UNIT_METRIC ? 2 : 3,	Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_RECORD, :units => stepsUnits });
-			
-			stepsPerHourField = createField("stepsPerHour", 4, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_RECORD, :units => stepsUnits });
-
-			averageStepsPerKmOrMileField = createField(
-				deviceSettings.distanceUnits == System.UNIT_METRIC ? "avgStepsPerKm" : "avgStepsPerMile",
-				deviceSettings.distanceUnits == System.UNIT_METRIC ? 5 : 6, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
-			
-			averageStepsPerHourField = createField("avgStepsPerHour", 7, Fit.DATA_TYPE_FLOAT, { :mesgType => Fit.MESG_TYPE_SESSION, :units => stepsUnits });
-
-			// Set initial steps FIT contributions to zero
-			stepsPerKmOrMileField.setData(0);
-			stepsPerHourField.setData(0);
-			averageStepsPerKmOrMileField.setData(0);
-			averageStepsPerHourField.setData(0);
-		} catch(e) {
-			System.println("Unable to create and initialise FIT data fields: " + e.getErrorMessage());
-			e.printStackTrace();
-		}
-		
-		previousDistanceUnits = deviceSettings.distanceUnits;
 	}
 	
 	// Handle activity timer events
@@ -191,12 +200,13 @@ class WalkerView extends Ui.DataField {
 	}
 	
 	function timerStart() {
-		stepsWhenTimerBecameActive = ActivityMonitor.getInfo().steps;
+		var steps = ActivityMonitor.getInfo().steps;
+		stepsWhenTimerBecameActive = steps != null ? steps : 0;
 		timerActive = true;
 	}
 	
 	function timerStop() {
-		consolidatedSteps = steps;
+		consolidatedSteps = steps != null ? steps : 0;
 		timerActive = false;
 	}
 	
@@ -267,7 +277,8 @@ class WalkerView extends Ui.DataField {
 		time = info.timerTime;
 		
 		// Day steps
-		daySteps = activityMonitorInfo.steps;
+		var rawSteps = activityMonitorInfo.steps;
+		daySteps = rawSteps != null ? rawSteps : 0;
 		if (previousDaySteps > 0 && daySteps < previousDaySteps) {
 			// Uh-oh, the daily step count has reduced - out for a midnight stroll are we?
 			stepsWhenTimerBecameActive -= previousDaySteps;
@@ -281,11 +292,14 @@ class WalkerView extends Ui.DataField {
 			
 			// Update step FIT contributions
 			try {
-				stepsActivityField.setData(steps);
-				stepsLapField.setData(lapSteps);
+				if (stepsActivityField != null) {
+					stepsActivityField.setData(steps);
+				}
+				if (stepsLapField != null) {
+					stepsLapField.setData(lapSteps);
+				}
 			} catch (e) {
-				System.println("Unable to set FIT data with steps value " + steps + " and lap steps value " + lapSteps + ": " + e.getErrorMessage());
-				e.printStackTrace();
+				System.println("Unable to set FIT data: " + e.getErrorMessage());
 			}
 		}
 		stepGoalProgress = activityMonitorInfo.stepGoal != null && activityMonitorInfo.stepGoal > 0
@@ -319,18 +333,26 @@ class WalkerView extends Ui.DataField {
 			var distance = newestStepData[1] - oldestStepData[1];
 			var steps = newestStepData[2] - oldestStepData[2];
 			if (milliseconds > 0 && distance > 0 && steps > 0) {
-				stepsPerKmOrMileField.setData((steps / distance) * (kmOrMileInMetersDistance / 1000.0) * 1000.0);
-				stepsPerHourField.setData((steps / (milliseconds.toFloat())) * 3600000.0);
+				if (stepsPerKmOrMileField != null) {
+					stepsPerKmOrMileField.setData((steps / distance) * (kmOrMileInMetersDistance / 1000.0) * 1000.0);
+				}
+				if (stepsPerHourField != null) {
+					stepsPerHourField.setData((steps / (milliseconds.toFloat())) * 3600000.0);
+				}
 			}
 		}
 		
 		// Update activity average FIT contributions
 		if (steps != null && steps > 0) {
 			if (info.elapsedDistance != null && info.elapsedDistance > 0) {
-				averageStepsPerKmOrMileField.setData((steps / info.elapsedDistance) * (kmOrMileInMetersDistance / 1000.0) * 1000.0);
+				if (averageStepsPerKmOrMileField != null) {
+					averageStepsPerKmOrMileField.setData((steps / info.elapsedDistance) * (kmOrMileInMetersDistance / 1000.0) * 1000.0);
+				}
 			}
 			if (time != null && time > 0) {
-				averageStepsPerHourField.setData((steps / (time.toFloat())) * 3600000.0);
+				if (averageStepsPerHourField != null) {
+					averageStepsPerHourField.setData((steps / (time.toFloat())) * 3600000.0);
+				}
 			}
 		}
 	}
@@ -608,6 +630,18 @@ class WalkerView extends Ui.DataField {
 			}
 		} else {
 			return "0.00";
+		}
+	}
+
+	function getPropertySafe(key) {
+		if (Application has :Properties) {
+			try {
+				return Application.Properties.getValue(key);
+			} catch (e) {
+				return null;
+			}
+		} else {
+			return Application.getApp().getProperty(key);
 		}
 	}
 

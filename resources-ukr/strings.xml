@@ -1,5 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
-	<string id="appName">Ходак</string>
+	<string id="appName">Walker</string>
 	<string id="steps">Кроки</string>
 	<string id="stepsUnits">кроки</string>
 	<string id="pace">ТЕМП</string>
@@ -8,8 +9,8 @@
 	<string id="paceOrSpeedModeTitle">Режим темпу / швидкості</string>
   <string id="heartRateModeTitle">Режим серцебиття</string>
   <string id="showHeartRateZoneTitle">Показати зону серцебиття</string>
-	<string id="showSpeedInsteadOfPace">Використовуйте швидкість</string>
-	<string id="darkMode">Чорний</string>
+	<string id="showSpeedInsteadOfPace">Використовувати швидкість замість темпу</string>
+	<string id="darkMode">Використовувати чорний фон</string>
 	<string id="modeInstant">Миттєвий</string>
 	<string id="mode5Seconds">5 сек сер</string>
 	<string id="mode10Seconds">10 сек сер</string>

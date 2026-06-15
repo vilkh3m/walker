@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">Pohodnik</string>
 	<string id="steps">Koraki</string>
@@ -9,7 +10,7 @@
 	<string id="heartRateModeTitle">Način srčnega utripa</string>
 	<string id="showHeartRateZoneTitle">Območje srčnega utripa</string>
 	<string id="showSpeedInsteadOfPace">Uporabite hitrost</string>
-	<string id="darkMode">Črna</string>
+	<string id="darkMode">Uporabi črno ozadje</string>
 	<string id="modeInstant">Takojšnji</string>
 	<string id="mode5Seconds">5s povprečje</string>
 	<string id="mode10Seconds">10s povprečje</string>

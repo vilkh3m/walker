@@ -1,7 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">行者</string>
 	<string id="steps">步数</string>
-	<string id="stepsUnits">步数单位</string>
+	<string id="stepsUnits">步</string>
 	<string id="pace">配速</string>
 	<string id="speed">速度</string>
 	<string id="timer">计时器</string>
@@ -9,7 +10,7 @@
 	<string id="heartRateModeTitle">心率模式</string>
 	<string id="showHeartRateZoneTitle">显示心率区间</string>
 	<string id="showSpeedInsteadOfPace">显示速度而不是配速</string>
-	<string id="darkMode">暗色模式</string>
+	<string id="darkMode">使用黑色背景</string>
 	<string id="modeInstant">实时</string>
 	<string id="mode5Seconds">平均5秒</string>
 	<string id="mode10Seconds">平均10秒</string>

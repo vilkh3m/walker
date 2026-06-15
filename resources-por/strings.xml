@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">Caminhante</string>
 	<string id="steps">Passos</string>
@@ -8,9 +9,9 @@
 	<string id="paceOrSpeedModeTitle">Modo de ritmo / rapidez</string>
 	<string id="heartRateModeTitle">Modo de frequência cardíaca</string>
 	<string id="showHeartRateZoneTitle">Zona de frequência cardíaca</string>
-	<string id="showSpeedInsteadOfPace">Usar rapidez</string>
-	<string id="darkMode">Preto</string>
-	<string id="modeInstant">Atual</string>
+	<string id="showSpeedInsteadOfPace">Usar velocidade em vez de ritmo</string>
+	<string id="darkMode">Usar fundo preto</string>
+	<string id="modeInstant">Instantâneo</string>
 	<string id="mode5Seconds">Média de 5s</string>
 	<string id="mode10Seconds">Média de 10s</string>
 	<string id="mode30Seconds">Média de 30s</string>

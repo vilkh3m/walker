@@ -1,5 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
-	<string id="appName">Chodítko</string>
+	<string id="appName">Walker</string>
 	<string id="steps">Kroky</string>
 	<string id="stepsUnits">kroky</string>
 	<string id="pace">TEMPO</string>
@@ -9,7 +10,7 @@
 	<string id="heartRateModeTitle">Režim srdcovej frekvencie</string>
 	<string id="showHeartRateZoneTitle">Zóna srdcovej frekvencie</string>
 	<string id="showSpeedInsteadOfPace">Použite rýchlosť</string>
-	<string id="darkMode">Čierna</string>
+	<string id="darkMode">Použiť čierne pozadie</string>
 	<string id="modeInstant">Okamžitý</string>
 	<string id="mode5Seconds">Priemer 5s</string>
 	<string id="mode10Seconds">Priemer 10s</string>

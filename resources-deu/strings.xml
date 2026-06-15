@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">Wanderer</string>
 	<string id="steps">Schritte</string>
@@ -8,9 +9,9 @@
 	<string id="paceOrSpeedModeTitle">Tempo/Geschwindigkeit modus</string>
 	<string id="heartRateModeTitle">Herzschlag modus</string>
 	<string id="showHeartRateZoneTitle">Herzfrequenzzone</string>
-	<string id="showSpeedInsteadOfPace">Geschwindigkeit</string>
-	<string id="darkMode">Schwarz</string>
-	<string id="modeInstant">Aktuell</string>
+	<string id="showSpeedInsteadOfPace">Geschwindigkeit statt Tempo verwenden</string>
+	<string id="darkMode">Schwarzen Hintergrund verwenden</string>
+	<string id="modeInstant">Sofort</string>
 	<string id="mode5Seconds">5s durchschn</string>
 	<string id="mode10Seconds">10s durchschn</string>
 	<string id="mode30Seconds">30s durchschn</string>

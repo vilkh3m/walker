@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">Izletnik</string>
 	<string id="steps">Koraci</string>
@@ -9,7 +10,7 @@
 	<string id="heartRateModeTitle">Način rada srca</string>
 	<string id="showHeartRateZoneTitle">Zona otkucaja srca</string>
 	<string id="showSpeedInsteadOfPace">Koristite brzinu</string>
-	<string id="darkMode">Crno</string>
+	<string id="darkMode">Koristi crnu pozadinu</string>
 	<string id="modeInstant">Sadašnji</string>
 	<string id="mode5Seconds">Prosjek 5s</string>
 	<string id="mode10Seconds">Prosjek 10s</string>
