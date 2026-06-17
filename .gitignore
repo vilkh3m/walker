@@ -1,1 +1,4 @@
 /bin/
+*.class
+*crashes.json
+scratch/

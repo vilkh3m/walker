@@ -200,7 +200,8 @@ class WalkerView extends Ui.DataField {
 	}
 	
 	function timerStart() {
-		var steps = ActivityMonitor.getInfo().steps;
+		var activityMonitorInfo = ActivityMonitor.getInfo();
+		var steps = activityMonitorInfo != null ? activityMonitorInfo.steps : 0;
 		stepsWhenTimerBecameActive = steps != null ? steps : 0;
 		timerActive = true;
 	}
@@ -277,7 +278,7 @@ class WalkerView extends Ui.DataField {
 		time = info.timerTime;
 		
 		// Day steps
-		var rawSteps = activityMonitorInfo.steps;
+		var rawSteps = activityMonitorInfo != null ? activityMonitorInfo.steps : null;
 		daySteps = rawSteps != null ? rawSteps : 0;
 		if (previousDaySteps > 0 && daySteps < previousDaySteps) {
 			// Uh-oh, the daily step count has reduced - out for a midnight stroll are we?
@@ -302,15 +303,16 @@ class WalkerView extends Ui.DataField {
 				System.println("Unable to set FIT data: " + e.getErrorMessage());
 			}
 		}
-		stepGoalProgress = activityMonitorInfo.stepGoal != null && activityMonitorInfo.stepGoal > 0
-			? daySteps > activityMonitorInfo.stepGoal
+		var stepGoal = activityMonitorInfo != null ? activityMonitorInfo.stepGoal : null;
+		stepGoalProgress = stepGoal != null && stepGoal > 0
+			? daySteps > stepGoal
 				? 1
-				: daySteps / activityMonitorInfo.stepGoal.toFloat()
+				: daySteps / stepGoal.toFloat()
 			: 0;
 		
 		// Calories
 		calories = info.calories;
-		dayCalories = activityMonitorInfo.calories;
+		dayCalories = activityMonitorInfo != null ? activityMonitorInfo.calories : null;
 		
 		// Add step data to the circular queue
 		if (time != null && time > 0 && info.elapsedDistance != null && info.elapsedDistance > 0 && steps != null && steps > 0) {
