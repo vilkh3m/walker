@@ -1,5 +1,11 @@
 IMPORTANT: See http://walker.wwarby.com/#help for installation. I won't respond to installation help requests. If you need to get in touch about anything else, please write in English.
 
+1.8.0
+    - Fix remote crashes related to ActivityMonitor.getInfo() and settings serialization
+    - Fix FIT contribution field crashes and optimize memory layout
+    - Drop support for older 16KB devices to focus on modern features
+    - Improve Bahasa Indonesia translations
+
 1.7.1
     - Fix crash on pause/resume
     - Fix missing FIT contribution fields
