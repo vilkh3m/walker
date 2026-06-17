@@ -246,6 +246,11 @@ Code and ideas borrowed from [RunnersField by kpaumann](https://github.com/kopa/
 
 <a name="changelog"></a>
 ## Changelog
+- 1.8.0
+    - Fix potential crashes when displaying steps, goals, or calories
+    - Fix potential crashes when saving activities
+    - Removed support for very old watch models to allow for new features
+    - Improved Indonesian translations
 - 1.7.1
     - Fix crash on pause/resume
 		- Fix missing FIT contribution fields
