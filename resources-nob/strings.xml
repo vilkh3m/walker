@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">Walker</string>
 	<string id="steps">Trinn</string>
@@ -8,9 +9,9 @@
 	<string id="paceOrSpeedModeTitle">Tempo / hastighet modus</string>
 	<string id="heartRateModeTitle">Puls modus</string>
 	<string id="showHeartRateZoneTitle">Pulssone</string>
-	<string id="showSpeedInsteadOfPace">Bruk hastighet</string>
-	<string id="darkMode">Svart</string>
-	<string id="modeInstant">Nuværende</string>
+	<string id="showSpeedInsteadOfPace">Bruk hastighet i stedet for tempo</string>
+	<string id="darkMode">Bruk svart bakgrunn</string>
+	<string id="modeInstant">Øyeblikkelig</string>
 	<string id="mode5Seconds">5s gjennomsnitt</string>
 	<string id="mode10Seconds">10s gjennomsnitt</string>
 	<string id="mode30Seconds">30s gjennomsnitt</string>

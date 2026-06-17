@@ -1,8 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">Πεζοπόρος</string>
 	<string id="steps">Βήματα</string>
 	<string id="stepsUnits">βήματα</string>
-	<string id="pace">Ταχύτητα</string>
+	<string id="pace">Ρυθμός</string>
 	<string id="speed">Ταχύτης</string>
 	<string id="timer">Χρόνο</string>
 	<string id="paceOrSpeedModeTitle">Λειτουργία ρυθμού / ταχύτητας</string>

@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">Người Đi Dạo</string>
 	<string id="steps">Bước</string>
@@ -9,7 +10,7 @@
 	<string id="heartRateModeTitle">Chế độ nhịp tim</string>
 	<string id="showHeartRateZoneTitle">Vùng nhịp tim</string>
 	<string id="showSpeedInsteadOfPace">Sử dụng tốc độ</string>
-	<string id="darkMode">Đen</string>
+	<string id="darkMode">Sử dụng nền đen</string>
 	<string id="modeInstant">Hiện hành</string>
 	<string id="mode5Seconds">Trung bình 5 giây</string>
 	<string id="mode10Seconds">Trung bình 10 giây</string>

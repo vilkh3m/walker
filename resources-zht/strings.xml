@@ -1,7 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">沃克</string>
 	<string id="steps">腳步</string>
-	<string id="stepsUnits">腳步</string>
+	<string id="stepsUnits">步</string>
 	<string id="pace">步伐</string>
 	<string id="speed">速度</string>
 	<string id="timer">計時器</string>
@@ -9,7 +10,7 @@
 	<string id="heartRateModeTitle">心率模式</string>
 	<string id="showHeartRateZoneTitle">顯示心率區</string>
 	<string id="showSpeedInsteadOfPace">顯示速度而不是速度</string>
-	<string id="darkMode">黑色</string>
+	<string id="darkMode">使用黑色背景</string>
 	<string id="modeInstant">現</string>
 	<string id="mode5Seconds">平均5秒</string>
 	<string id="mode10Seconds">平均10秒</string>

@@ -5,8 +5,8 @@
 - Correct UUID assigned in manifest.xml
 - Version number updated in manifest.xml
 - New strings converted to all languages
-- Tested against epix
-- Tested against Forerunner 235
+- Tested against epix 2
+- Tested against fenix 5x
 - Code checked in
 - Release created in GitHub
 - Description updated on Connect store

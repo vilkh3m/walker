@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">Chodziarz</string>
 	<string id="steps">Kroki</string>
@@ -8,8 +9,8 @@
 	<string id="paceOrSpeedModeTitle">Tryb tempa / prędkości</string>
 	<string id="heartRateModeTitle">Tryb tętna</string>
 	<string id="showHeartRateZoneTitle">Strefa tętna</string>
-	<string id="showSpeedInsteadOfPace">Użyj kroków</string>
-	<string id="darkMode">Czarny</string>
+	<string id="showSpeedInsteadOfPace">Używaj prędkości zamiast tempa</string>
+	<string id="darkMode">Użyj czarnego tła</string>
 	<string id="modeInstant">Aktualny</string>
 	<string id="mode5Seconds">5s średnia</string>
 	<string id="mode10Seconds">10s średnia</string>

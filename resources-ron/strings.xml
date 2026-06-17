@@ -1,5 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
-	<string id="appName">Umblător</string>
+	<string id="appName">Walker</string>
 	<string id="steps">Pași</string>
 	<string id="stepsUnits">pași</string>
 	<string id="pace">RITM</string>
@@ -8,8 +9,8 @@
 	<string id="paceOrSpeedModeTitle">Modul de ritm / viteză</string>
 	<string id="heartRateModeTitle">Modul de ritm cardiac</string>
 	<string id="showHeartRateZoneTitle">Zona de ritm cardiac</string>
-	<string id="showSpeedInsteadOfPace">Utilizați viteza</string>
-	<string id="darkMode">Negru</string>
+	<string id="showSpeedInsteadOfPace">Utilizați viteza în loc de ritm</string>
+	<string id="darkMode">Utilizați fundal negru</string>
 	<string id="modeInstant">Actual</string>
 	<string id="mode5Seconds">5 a doua medie</string>
 	<string id="mode10Seconds">10 a doua medie</string>

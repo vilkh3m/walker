@@ -1,0 +1,124 @@
+IMPORTANT: See http://walker.wwarby.com/#help for installation. I won't respond to installation help requests. If you need to get in touch about anything else, please write in English.
+
+1.8.0
+    - Fix potential crashes when displaying steps, goals, or calories
+    - Fix potential crashes when saving activities
+    - Removed support for very old watch models to allow for new features
+    - Improved Indonesian translations
+
+1.7.1
+    - Fix crash on pause/resume
+    - Fix missing FIT contribution fields
+1.7.0
+    - Add support for new devices
+    - Prevent crash when unable to write FIT contributions
+    - Removed support for really old devices
+1.6.1
+    - Fix a bug introduced by changes in 1.6.0
+1.6.0
+    - Add support for new devices, update translations
+
+1.5.1
+    - Add translation capability for speed / pace units with Hebrew translation included
+
+1.5.0
+    - Add support for D2 Mach 1, Forerunner 55, 255, 255S and 955
+    - Internal work to lock code for older lower memory devices such as Forerunner 235, enabling future new feature development for newer devices
+    - Fix a longstanding bug where steps would go screwy after using "resume later" on an activity
+    - Fix Hungarian and Hebrew translations (thanks flocsy)
+    - Use camelCase English names for custom FIT contribution field names
+
+1.4.0
+    - Add support for new devices
+
+1.3.1
+    - Add support for new devices, update Chinese translation (thanks Chuanyi)
+
+1.3.0
+    - Add support for Venu 2 and Venu 2S
+
+1.2.0
+    - Add support for new devices
+    - Update Polish translation
+
+1.1.1
+    - Fix bug with reducing font size on walks over 1 hour
+
+1.1.0
+	- Setting for black background
+	- Memory optimisation
+
+1.0.8
+	- Fix calculation bug when speed display mode was selected in combination with miles units
+
+1.0.7
+	- Black battery percentage text colour when battery is yellow (10-20%)
+
+1.0.6
+  - Add "English" as a language in addition to it being the "Default" language
+
+1.0.5
+  - Removed "BETA" from the app name
+
+1.0.4
+  - Fixed where I accidentally left screenshot hard-coded values in the build
+
+1.0.3
+  - Increase font sizes for Forerunner 230, 235, 630 and 735XT
+
+1.0.2
+  - Fix calculation bug when speed display mode was selected
+
+1.0.1
+  - Add Arabic, Hebrew and Thai language translations
+
+1.0.0
+  - Add FIT contributions for average steps per km/mile/hour
+  - Smaller heart icon when HRZ is disabled
+  - Show + or - if HR is outside HR zones
+  - Memory optimisation
+  - Add language support for all remaining languages supported by Garmin
+
+0.6.3
+  - Fix bug where incorrect heart rate zone was shown
+  - Fix bug where speed was calculated incorrectly if units were set to miles and speed display was enabled in settings
+  - Fix bug where pace units setting on watch was ignored (distance units was being used for pace)
+
+0.6.2
+  - Fix bug with duplicate label in settings
+
+0.6.1
+  - Accurate French and Russian translations
+
+0.6.0
+  - Fix missing settings
+  - Add setting to show speed instead of pace
+  - Added support for several new languages
+
+0.5.0
+  - Use larger fonts where possible on all devices
+  - Make daily steps and calories text darker on white backgrounds
+  - Add support for new watch models
+
+0.4.1
+  - Fix battery icon position bug on 240x240px screens
+
+0.4.0
+  - Add heart rate zone (configured by setting, disabled by default) to heart icon
+  - Colour heart icon by heart rate zone
+
+0.3.0
+  - Add FIT contribution for steps
+  - Support for "resume later" on activities
+  - Localised language support for several European languages
+  - Fix bug that would reset activity steps on activity "stop" (as opposed to "reset")
+  - Memory usage optimisation
+
+0.2.0
+  - Add step goal progress bar
+  - Hopefully support stable transition across midnight boundary for step counter
+  - Optimised images for compression efficiency
+  - Screenshots for Garmin Store
+
+0.1.0
+  - Initial alpha release

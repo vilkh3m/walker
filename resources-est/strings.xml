@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">Jalutaja</string>
 	<string id="steps">Sammud</string>
@@ -9,7 +10,7 @@
 	<string id="heartRateModeTitle">Pulsisageduse modus</string>
 	<string id="showHeartRateZoneTitle">Herzfrequenzzone</string>
 	<string id="showSpeedInsteadOfPace">Kasuta kiirust</string>
-	<string id="darkMode">Must</string>
+	<string id="darkMode">Kasuta musta tausta</string>
 	<string id="modeInstant">Praegune</string>
 	<string id="mode5Seconds">5s keskmine</string>
 	<string id="mode10Seconds">10s keskmine</string>

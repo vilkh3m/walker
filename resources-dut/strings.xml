@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">Wandelaar</string>
 	<string id="steps">Stappen</string>
@@ -8,9 +9,9 @@
 	<string id="paceOrSpeedModeTitle">Tempo/snelheid modus</string>
 	<string id="heartRateModeTitle">Hartslag modus</string>
 	<string id="showHeartRateZoneTitle">Hartslagzone</string>
-	<string id="showSpeedInsteadOfPace">Gebruik snelheid</string>
-	<string id="darkMode">Zwart</string>
-	<string id="modeInstant">Huidig</string>
+	<string id="showSpeedInsteadOfPace">Gebruik snelheid in plaats van tempo</string>
+	<string id="darkMode">Gebruik zwarte achtergrund</string>
+	<string id="modeInstant">Direct</string>
 	<string id="mode5Seconds">5s gemiddeld</string>
 	<string id="mode10Seconds">10s gemiddeld</string>
 	<string id="mode30Seconds">30s gemiddeld</string>

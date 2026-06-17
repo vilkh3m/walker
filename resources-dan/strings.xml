@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">Vandrer</string>
 	<string id="steps">Trin</string>
@@ -8,9 +9,9 @@
 	<string id="paceOrSpeedModeTitle">Tempo/hastighed modus</string>
 	<string id="heartRateModeTitle">Puls modus</string>
 	<string id="showHeartRateZoneTitle">Pulszone</string>
-	<string id="showSpeedInsteadOfPace">Brug hastighed</string>
-	<string id="darkMode">Sort</string>
-	<string id="modeInstant">Nuværende</string>
+	<string id="showSpeedInsteadOfPace">Brug hastighed i stedet for tempo</string>
+	<string id="darkMode">Brug sort baggrund</string>
+	<string id="modeInstant">Øjeblikkelig</string>
 	<string id="mode5Seconds">5sgennemsnit</string>
 	<string id="mode10Seconds">10s gennemsnit</string>
 	<string id="mode30Seconds">30s gennemsnit</string>

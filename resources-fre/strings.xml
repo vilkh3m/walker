@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
 	<string id="appName">Marcheur</string>
 	<string id="steps">Pas</string>
@@ -8,8 +9,8 @@
 	<string id="paceOrSpeedModeTitle">Mode allure/vitesse</string>
 	<string id="heartRateModeTitle">Mode rythme cardiaque</string>
 	<string id="showHeartRateZoneTitle">Zone de fréquence cardiaque</string>
-	<string id="showSpeedInsteadOfPace">Utiliser la vitesse</string>
-	<string id="darkMode">Noir</string>
+	<string id="showSpeedInsteadOfPace">Utiliser la vitesse au lieu de l'allure</string>
+	<string id="darkMode">Utiliser un fond noir</string>
 	<string id="modeInstant">Instantané</string>
 	<string id="mode5Seconds">Moy sur 5s</string>
 	<string id="mode10Seconds">Moy sur 10s</string>

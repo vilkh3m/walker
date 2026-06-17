@@ -1,5 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
 <strings>
-	<string id="appName">הליכון</string>
+	<string id="appName">Walker</string>
 	<string id="steps">צעדים</string>
 	<string id="stepsUnits">צעדים</string>
 	<string id="pace">קצב</string>
@@ -9,7 +10,7 @@
 	<string id="heartRateModeTitle">תזמון דופק</string>
 	<string id="showHeartRateZoneTitle">אזור דופק</string>
 	<string id="showSpeedInsteadOfPace">תצוגת מהירות במקום קצב</string>
-	<string id="darkMode">רקע שחור</string>
+	<string id="darkMode">שימוש ברקע שחור</string>
 	<string id="modeInstant">מיידי</string>
 	<string id="mode5Seconds">ממוצע 5 שניות</string>
 	<string id="mode10Seconds">ממוצע 10 שניות</string>
