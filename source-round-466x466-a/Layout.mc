@@ -1,41 +1,37 @@
 import Toybox.Lang;
 
 /* 
- * 454 x 454 FONT GROUP B
+ * 466 x 466 FONT GROUP A
  * DEVICES:
- * - Forerunner 965
- * - Venu 3
- * - fenix 8 Pro 47mm / 51mm
- * - fenix 9 47mm / 51mm
- * - fenix 9 Pro 47mm
+ * - fenix 9 Pro 51mm
  */
 
 function getLayout() as Array {
 	return [
-		60, 138, 274, 394, // [0-3] lines
+		62, 142, 281, 404, // [0-3] lines
 		5,                 // [4]   stepGoalProgressOffsetX
 		6,                 // [5]   stepGoalProgressHeight
 		14,                // [6]   centerOffsetX
-		30,                // [7]   clockY
+		31,                // [7]   clockY
 		0,                 // [8]   clockOffsetX
-		98,                // [9]   topRowY
-		168,               // [10]  middleRowLabelY
-		223,               // [11]  middleRowValueY
-		166,               // [12]  heartRateIconY
-		154,               // [13]  heartRateIconHRZY
-		28,                // [14]  heartRateIconWidth
-		40,                // [15]  heartRateIconHRZWidth
+		101,               // [9]   topRowY
+		172,               // [10]  middleRowLabelY
+		229,               // [11]  middleRowValueY
+		170,               // [12]  heartRateIconY
+		158,               // [13]  heartRateIconHRZY
+		29,                // [14]  heartRateIconWidth
+		41,                // [15]  heartRateIconHRZWidth
 		2,                 // [16]  heartRateIconXOffset
 		3,                 // [17]  heartRateIconHRZXOffset
-		218,               // [18]  heartRateTextY
-		306,               // [19]  bottomRowUpperTextY
-		358,               // [20]  bottomRowLowerTextY
-		35,                // [21]  bottomRowIconX
-		294,               // [22]  bottomRowIconY
-		421,               // [23]  batteryY
+		224,               // [18]  heartRateTextY
+		314,               // [19]  bottomRowUpperTextY
+		367,               // [20]  bottomRowLowerTextY
+		36,                // [21]  bottomRowIconX
+		302,               // [22]  bottomRowIconY
+		432,               // [23]  batteryY
 		0,                 // [24]  batteryX
-		65,                // [25]  batteryWidth
-		28,                // [26]  batteryHeight
+		67,                // [25]  batteryWidth
+		29,                // [26]  batteryHeight
 		1,                 // [27]  timeFont                 Gfx.FONT_TINY
 		1,                 // [28]  topRowFont               Gfx.FONT_TINY
 		1,                 // [29]  heartRateFont            Gfx.FONT_TINY
