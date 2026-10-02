@@ -9,6 +9,7 @@
 	<string id="heartRateModeTitle">Mode detak jantung</string>
 	<string id="showHeartRateZoneTitle">Tampilkan zona detak jantung</string>
 	<string id="showSpeedInsteadOfPace">Gunakan kecepatan</string>
+	<string id="showElevationInsteadOfCalories">Gunakan ketinggian</string>
 	<string id="darkMode">Gunakan latar belakang hitam</string>
 	<string id="modeInstant">Instan</string>
 	<string id="mode5Seconds">Rata-rata 5 detik</string>

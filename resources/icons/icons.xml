@@ -19,4 +19,14 @@
             <color>FFFFFF</color>
         </palette>
 	</bitmap>
+	<bitmap id="ie" filename="elevation.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>000000</color>
+        </palette>
+	</bitmap>
+	<bitmap id="ied" filename="elevation.png" dithering="none">
+		<palette disableTransparency="false">
+            <color>FFFFFF</color>
+        </palette>
+	</bitmap>
 </drawables>

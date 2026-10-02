@@ -21,7 +21,8 @@ class WalkerView extends Ui.DataField {
 	var darkModeFromSetting = false;
 	
 	var stepsIcon;
-	var caloriesIcon;
+	// Calories or elevation icon, depending on the showElevationInsteadOfCalories setting
+	var rightIcon;
 	
 	var batteryIconColour;
 	var batteryTextColour;
@@ -40,12 +41,17 @@ class WalkerView extends Ui.DataField {
 	var paceOrSpeedMode = 0;
 	var heartRateMode = 0;
 	var showHeartRateZone = false;
+	// Heart rate zone thresholds for the current sport, read once per activity rather than on every call to compute()
+	var heartRateZones;
 	var showSpeedInsteadOfPace = false;
+	var showElevationInsteadOfCalories = false;
 	
 	var timerActive = false;
 	
 	var kmOrMileInMetersDistance;
 	var kmOrMileInKmPace;
+	// Meters to meters or feet, according to the device elevation units setting
+	var meterInElevationUnits;
 	var averagePaceOrSpeedUnitsLabel;
 	var distanceUnitsLabel;
 	
@@ -59,8 +65,9 @@ class WalkerView extends Ui.DataField {
 	var paceOrSpeed;
 	var time;
 	var daySteps;
-	var calories;
-	var dayCalories;
+	// Bottom right counters: activity calories and daily calories, or activity ascent and current altitude
+	var caloriesOrAscent;
+	var dayCaloriesOrAltitude;
 	var stepGoalProgress;
 	
 	// FIT contributor fields
@@ -174,7 +181,14 @@ class WalkerView extends Ui.DataField {
 		}
 		
 		showHeartRateZone = getPropertySafe("z");
+		// Heart rate zone thresholds don't change during an activity, so read them once rather than on every call to compute()
+		heartRateZones = showHeartRateZone ? User.getHeartRateZones(User.getCurrentSport()) : null;
 		showSpeedInsteadOfPace = getPropertySafe("s");
+		showElevationInsteadOfCalories = getPropertySafe("e") == true;
+		meterInElevationUnits = deviceSettings.elevationUnits == System.UNIT_METRIC ? 1.0f : 3.28084f;
+		
+		// Force the bottom right icon to be reloaded, as the setting it depends on may have changed
+		previousDarkMode = null;
 		
 		kmOrMileInMetersDistance = deviceSettings.distanceUnits == System.UNIT_METRIC ? 1000.0f : 1609.34f;
 		kmOrMileInKmPace = deviceSettings.paceUnits == System.UNIT_METRIC ? 1.0f : 1.60934f;
@@ -203,6 +217,8 @@ class WalkerView extends Ui.DataField {
 		var activityMonitorInfo = ActivityMonitor.getInfo();
 		var steps = activityMonitorInfo != null ? activityMonitorInfo.steps : 0;
 		stepsWhenTimerBecameActive = steps != null ? steps : 0;
+		// Re-read the zone thresholds, as the sport may have changed (e.g. a multisport transition)
+		if (showHeartRateZone) { heartRateZones = User.getHeartRateZones(User.getCurrentSport()); }
 		timerActive = true;
 	}
 	
@@ -234,8 +250,7 @@ class WalkerView extends Ui.DataField {
 		
 		// Heart rate zone
 		heartRateZone = null;
-		if (showHeartRateZone) {
-			var heartRateZones = User.getHeartRateZones(User.getCurrentSport());
+		if (showHeartRateZone && heartRateZones != null) {
 			heartRateZone = '-';
 			if (heartRate != null && heartRate > heartRateZones[0]) {
 				for (var x = 1; x < heartRateZones.size(); x++) {
@@ -310,9 +325,14 @@ class WalkerView extends Ui.DataField {
 				: daySteps / stepGoal.toFloat()
 			: 0;
 		
-		// Calories
-		calories = info.calories;
-		dayCalories = activityMonitorInfo != null ? activityMonitorInfo.calories : null;
+		// Calories, or elevation when the setting is enabled
+		if (showElevationInsteadOfCalories) {
+			caloriesOrAscent = info.totalAscent != null ? info.totalAscent * meterInElevationUnits : null;
+			dayCaloriesOrAltitude = info.altitude != null ? info.altitude * meterInElevationUnits : null;
+		} else {
+			caloriesOrAscent = info.calories;
+			dayCaloriesOrAltitude = activityMonitorInfo != null ? activityMonitorInfo.calories : null;
+		}
 		
 		// Add step data to the circular queue
 		if (time != null && time > 0 && info.elapsedDistance != null && info.elapsedDistance > 0 && steps != null && steps > 0) {
@@ -441,8 +461,8 @@ class WalkerView extends Ui.DataField {
 		timeText = "8:88:88";
 		steps = 88888;
 		daySteps = 88888;
-		calories = 88888;
-		dayCalories = 88888;
+		caloriesOrAscent = 88888;
+		dayCaloriesOrAltitude = 88888;
 		stepGoalProgress = 0.75;
 		shrinkMiddleText = true;
 		*/
@@ -456,8 +476,8 @@ class WalkerView extends Ui.DataField {
 		timeText = "23:31";
 		steps = 2331;
 		daySteps = 7490;
-		calories = 135;
-		dayCalories = 1742;
+		caloriesOrAscent = 135;
+		dayCaloriesOrAltitude = 1742;
 		stepGoalProgress = 0.75;
 		*/
 		
@@ -465,7 +485,9 @@ class WalkerView extends Ui.DataField {
 		if (previousDarkMode != darkMode) {
 			previousDarkMode = darkMode;
 			stepsIcon = Ui.loadResource(darkMode ? Rez.Drawables.isd : Rez.Drawables.is);
-			caloriesIcon = Ui.loadResource(darkMode ? Rez.Drawables.icd : Rez.Drawables.ic);
+			rightIcon = Ui.loadResource(showElevationInsteadOfCalories
+				? (darkMode ? Rez.Drawables.ied : Rez.Drawables.ie)
+				: (darkMode ? Rez.Drawables.icd : Rez.Drawables.ic));
 		}
 		
 		// Render background
@@ -575,10 +597,10 @@ class WalkerView extends Ui.DataField {
 		dc.drawText(halfWidth - layout[6] /* centerOffsetX */, layout[19] /* bottomRowUpperTextY */, layout[33] /* bottomRowFont */,
 			(steps == null ? 0 : steps).format("%d"), Gfx.TEXT_JUSTIFY_RIGHT | Gfx.TEXT_JUSTIFY_VCENTER);
 		
-		// Render calories
-		dc.drawBitmap(dc.getWidth() - layout[21] /* bottomRowIconX */ - caloriesIcon.getWidth(), layout[22] /* bottomRowIconY */, caloriesIcon);
+		// Render calories or activity ascent
+		dc.drawBitmap(dc.getWidth() - layout[21] /* bottomRowIconX */ - rightIcon.getWidth(), layout[22] /* bottomRowIconY */, rightIcon);
 		dc.drawText(halfWidth + layout[6] /* centerOffsetX */, layout[19] /* bottomRowUpperTextY */, layout[33] /* bottomRowFont */,
-			(calories == null ? 0 : calories).format("%d"), Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
+			(caloriesOrAscent == null ? 0 : caloriesOrAscent).format("%d"), Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
 		
 		// Set grey colour for day counts
 		dc.setColor(layout[35] /* eightColourPalette */ ? Gfx.COLOR_DK_BLUE : Gfx.COLOR_DK_GRAY, Gfx.COLOR_TRANSPARENT);
@@ -587,9 +609,9 @@ class WalkerView extends Ui.DataField {
 		dc.drawText(halfWidth - layout[6] /* centerOffsetX */, layout[20] /* bottomRowLowerTextY */, layout[33] /* bottomRowFont */,
 			(daySteps == null ? 0 : daySteps).format("%d"), Gfx.TEXT_JUSTIFY_RIGHT | Gfx.TEXT_JUSTIFY_VCENTER);
 		
-		// Render day calories
+		// Render day calories or current altitude
 		dc.drawText(halfWidth + layout[6] /* centerOffsetX */, layout[20] /* bottomRowLowerTextY */, layout[33] /* bottomRowFont */,
-			(dayCalories == null ? 0 : dayCalories).format("%d"), Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
+			(dayCaloriesOrAltitude == null ? 0 : dayCaloriesOrAltitude).format("%d"), Gfx.TEXT_JUSTIFY_LEFT | Gfx.TEXT_JUSTIFY_VCENTER);
 		
 		// Render battery
 		dc.setColor(batteryIconColour, Gfx.COLOR_TRANSPARENT);

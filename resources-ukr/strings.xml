@@ -10,6 +10,7 @@
   <string id="heartRateModeTitle">Режим серцебиття</string>
   <string id="showHeartRateZoneTitle">Показати зону серцебиття</string>
 	<string id="showSpeedInsteadOfPace">Використовувати швидкість замість темпу</string>
+	<string id="showElevationInsteadOfCalories">Використовувати висоту замість калорій</string>
 	<string id="darkMode">Використовувати чорний фон</string>
 	<string id="modeInstant">Миттєвий</string>
 	<string id="mode5Seconds">5 сек сер</string>

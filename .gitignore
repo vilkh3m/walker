@@ -2,3 +2,4 @@
 *.class
 *crashes.json
 scratch/
+.DS_Store

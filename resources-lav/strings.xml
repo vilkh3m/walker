@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Sirdsdarbības režīma režīms</string>
 	<string id="showHeartRateZoneTitle">Sirdsdarbības zonu</string>
 	<string id="showSpeedInsteadOfPace">Izmantojiet ātrumu</string>
+	<string id="showElevationInsteadOfCalories">Izmantojiet augstumu</string>
 	<string id="darkMode">Izmantot melnu fonu</string>
 	<string id="modeInstant">Tūlītējs</string>
 	<string id="mode5Seconds">5s vidējais</string>

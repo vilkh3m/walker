@@ -10,6 +10,7 @@
   <string id="heartRateModeTitle">Режим сердечного ритма</string>
   <string id="showHeartRateZoneTitle">Показать зону пульса</string>
 	<string id="showSpeedInsteadOfPace">Использовать скорость вместо темпа</string>
+	<string id="showElevationInsteadOfCalories">Использовать высоту вместо калорий</string>
 	<string id="darkMode">Использовать черный фон</string>
 	<string id="modeInstant">Мгновенный</string>
 	<string id="mode5Seconds">средний за 5 секунд</string>

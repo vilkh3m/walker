@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Syketila</string>
 	<string id="showHeartRateZoneTitle">Sykevyöhyke</string>
 	<string id="showSpeedInsteadOfPace">Käytä nopeutta vauhdin sijasta</string>
+	<string id="showElevationInsteadOfCalories">Käytä korkeutta kalorien sijasta</string>
 	<string id="darkMode">Käytä mustaa taustaa</string>
 	<string id="modeInstant">Välitön</string>
 	<string id="mode5Seconds">5s keskim</string>

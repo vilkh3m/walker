@@ -9,6 +9,7 @@
 	<string id="heartRateModeTitle">Режим на сърдечна честота</string>
 	<string id="showHeartRateZoneTitle">Зона на сърдечната честота</string>
 	<string id="showSpeedInsteadOfPace">Използвайте скорост вместо темпо</string>
+	<string id="showElevationInsteadOfCalories">Използвайте височина вместо калории</string>
 	<string id="darkMode">Използвайте тъмен фон</string>
 	<string id="modeInstant">моментен</string>
 	<string id="mode5Seconds">5 сек средно</string>

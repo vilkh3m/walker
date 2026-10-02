@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">תזמון דופק</string>
 	<string id="showHeartRateZoneTitle">אזור דופק</string>
 	<string id="showSpeedInsteadOfPace">תצוגת מהירות במקום קצב</string>
+	<string id="showElevationInsteadOfCalories">תצוגת גובה במקום קלוריות</string>
 	<string id="darkMode">שימוש ברקע שחור</string>
 	<string id="modeInstant">מיידי</string>
 	<string id="mode5Seconds">ממוצע 5 שניות</string>

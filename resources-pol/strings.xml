@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Tryb tętna</string>
 	<string id="showHeartRateZoneTitle">Strefa tętna</string>
 	<string id="showSpeedInsteadOfPace">Używaj prędkości zamiast tempa</string>
+	<string id="showElevationInsteadOfCalories">Używaj wysokości zamiast kalorii</string>
 	<string id="darkMode">Użyj czarnego tła</string>
 	<string id="modeInstant">Aktualny</string>
 	<string id="mode5Seconds">5s średnia</string>

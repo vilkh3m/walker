@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Širdies ritmo režimas</string>
 	<string id="showHeartRateZoneTitle">Rodyti širdies ritmo zoną</string>
 	<string id="showSpeedInsteadOfPace">Naudokite greitį</string>
+	<string id="showElevationInsteadOfCalories">Naudokite aukštį</string>
 	<string id="darkMode">Naudoti juodą foną</string>
 	<string id="modeInstant">Momentinis</string>
 	<string id="mode5Seconds">5s vidurkis</string>

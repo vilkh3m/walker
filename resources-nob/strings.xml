@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Puls modus</string>
 	<string id="showHeartRateZoneTitle">Pulssone</string>
 	<string id="showSpeedInsteadOfPace">Bruk hastighet i stedet for tempo</string>
+	<string id="showElevationInsteadOfCalories">Bruk høyde i stedet for kalorier</string>
 	<string id="darkMode">Bruk svart bakgrunn</string>
 	<string id="modeInstant">Øyeblikkelig</string>
 	<string id="mode5Seconds">5s gjennomsnitt</string>

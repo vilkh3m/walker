@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">심박수 모드</string>
 	<string id="showHeartRateZoneTitle">심박수 구간 표시</string>
 	<string id="showSpeedInsteadOfPace">페이스 대신 속도 표시</string>
+	<string id="showElevationInsteadOfCalories">칼로리 대신 고도 표시</string>
 	<string id="darkMode">검은색 배경 사용</string>
 	<string id="modeInstant">실시간</string>
 	<string id="mode5Seconds">평균 5 초</string>

@@ -9,6 +9,7 @@
 - [Donate](#donate)
 - [Features](#features)
 - [Screenshots](#screenshots)
+- [Elevation instead of calories](#elevation)
 - [FAQ](#faq)
 - [Help Requests](#help)
 - [Installation](#installation)
@@ -39,6 +40,7 @@ A free data field for Garmin watches to provide stats for walking activities. Bu
 - Steps for today
 - Calories for current activity
 - Calories for today
+- Total ascent for the current activity and current altitude above sea level, in place of the two calorie counters (if enabled in settings - disabled by default)
 - Battery charge level with colour changing battery icon
 - Progress bar showing progress towards step goal (if step goal is set)
 - Black or white background (via app setting or watch setting)
@@ -56,6 +58,24 @@ Walker also contributes step data to the FIT profile for your activity, showing 
 	<img src="supporting-files/screenshots/screenshot-4.png" height="350" alt="Screenshot 4" />
 	<img src="supporting-files/screenshots/screenshot-5.png" height="350" alt="Screenshot 5" />
 </span>
+
+<a name="elevation"></a>
+## Elevation instead of calories
+The bottom right column normally shows calories for the current activity on the upper line and calories for today on the lower line. Turn on the **Use elevation instead of calories** setting and that column shows elevation instead:
+
+- **Upper line:** total ascent for the current activity
+- **Lower line:** current altitude above sea level
+
+Both values use the elevation units configured on the watch, so metres or feet, and the flame icon is replaced by a mountain icon. Everything else on the screen is unchanged, and the setting is disabled by default, so calories are still shown unless you turn it on.
+
+Altitude comes from the watch, which means it is as accurate as the barometric altimeter or, on watches without one, the GPS. Expect the altitude to settle during the first minutes of an activity and to drift with changing weather, exactly as it does in Garmin's own data fields.
+
+<span class="screenshots" style="display:block;text-align:center;background:#fff;padding: 1rem;">
+	<img src="supporting-files/screenshots/walker-elevation-light.png" height="350" alt="Elevation instead of calories, white background" />
+	<img src="supporting-files/screenshots/walker-elevation-dark.png" height="350" alt="Elevation instead of calories, black background" />
+</span>
+
+*Simulator screenshots from a fenix 9 Pro 47mm: 5 m of ascent during the activity and an altitude of 3110 m.*
 
 <a name="faq"></a>
 ## FAQ
