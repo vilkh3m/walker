@@ -41,6 +41,8 @@ class WalkerView extends Ui.DataField {
 	var paceOrSpeedMode = 0;
 	var heartRateMode = 0;
 	var showHeartRateZone = false;
+	// Heart rate zone thresholds for the current sport, read once per activity rather than on every call to compute()
+	var heartRateZones;
 	var showSpeedInsteadOfPace = false;
 	var showElevationInsteadOfCalories = false;
 	
@@ -179,6 +181,8 @@ class WalkerView extends Ui.DataField {
 		}
 		
 		showHeartRateZone = getPropertySafe("z");
+		// Heart rate zone thresholds don't change during an activity, so read them once rather than on every call to compute()
+		heartRateZones = showHeartRateZone ? User.getHeartRateZones(User.getCurrentSport()) : null;
 		showSpeedInsteadOfPace = getPropertySafe("s");
 		showElevationInsteadOfCalories = getPropertySafe("e") == true;
 		meterInElevationUnits = deviceSettings.elevationUnits == System.UNIT_METRIC ? 1.0f : 3.28084f;
@@ -213,6 +217,8 @@ class WalkerView extends Ui.DataField {
 		var activityMonitorInfo = ActivityMonitor.getInfo();
 		var steps = activityMonitorInfo != null ? activityMonitorInfo.steps : 0;
 		stepsWhenTimerBecameActive = steps != null ? steps : 0;
+		// Re-read the zone thresholds, as the sport may have changed (e.g. a multisport transition)
+		if (showHeartRateZone) { heartRateZones = User.getHeartRateZones(User.getCurrentSport()); }
 		timerActive = true;
 	}
 	
@@ -244,8 +250,7 @@ class WalkerView extends Ui.DataField {
 		
 		// Heart rate zone
 		heartRateZone = null;
-		if (showHeartRateZone) {
-			var heartRateZones = User.getHeartRateZones(User.getCurrentSport());
+		if (showHeartRateZone && heartRateZones != null) {
 			heartRateZone = '-';
 			if (heartRate != null && heartRate > heartRateZones[0]) {
 				for (var x = 1; x < heartRateZones.size(); x++) {
