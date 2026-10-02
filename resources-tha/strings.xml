@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">โหมดอัตราการเต้นของหัวใจ</string>
 	<string id="showHeartRateZoneTitle">โซนอัตราการเต้นของหัวใจ</string>
 	<string id="showSpeedInsteadOfPace">ใช้ความเร็ว</string>
+	<string id="showElevationInsteadOfCalories">ใช้ความสูง</string>
 	<string id="darkMode">ใช้พื้นหลังสีดำ</string>
 	<string id="modeInstant">ทันที</string>
 	<string id="mode5Seconds">เฉลี่ย 5 วินาที</string>

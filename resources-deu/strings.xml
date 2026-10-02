@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Herzschlag modus</string>
 	<string id="showHeartRateZoneTitle">Herzfrequenzzone</string>
 	<string id="showSpeedInsteadOfPace">Geschwindigkeit statt Tempo verwenden</string>
+	<string id="showElevationInsteadOfCalories">Höhe statt Kalorien verwenden</string>
 	<string id="darkMode">Schwarzen Hintergrund verwenden</string>
 	<string id="modeInstant">Sofort</string>
 	<string id="mode5Seconds">5s durchschn</string>

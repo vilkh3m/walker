@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Način srčnega utripa</string>
 	<string id="showHeartRateZoneTitle">Območje srčnega utripa</string>
 	<string id="showSpeedInsteadOfPace">Uporabite hitrost</string>
+	<string id="showElevationInsteadOfCalories">Uporabite nadmorsko višino</string>
 	<string id="darkMode">Uporabi črno ozadje</string>
 	<string id="modeInstant">Takojšnji</string>
 	<string id="mode5Seconds">5s povprečje</string>

@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">心率模式</string>
 	<string id="showHeartRateZoneTitle">显示心率区间</string>
 	<string id="showSpeedInsteadOfPace">显示速度而不是配速</string>
+	<string id="showElevationInsteadOfCalories">显示海拔而不是卡路里</string>
 	<string id="darkMode">使用黑色背景</string>
 	<string id="modeInstant">实时</string>
 	<string id="mode5Seconds">平均5秒</string>

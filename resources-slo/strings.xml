@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Režim srdcovej frekvencie</string>
 	<string id="showHeartRateZoneTitle">Zóna srdcovej frekvencie</string>
 	<string id="showSpeedInsteadOfPace">Použite rýchlosť</string>
+	<string id="showElevationInsteadOfCalories">Použite nadmorskú výšku</string>
 	<string id="darkMode">Použiť čierne pozadie</string>
 	<string id="modeInstant">Okamžitý</string>
 	<string id="mode5Seconds">Priemer 5s</string>

@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Hjärtfrekvensläge</string>
 	<string id="showHeartRateZoneTitle">Pulszon</string>
 	<string id="showSpeedInsteadOfPace">Använd hastighet i stället för tempo</string>
+	<string id="showElevationInsteadOfCalories">Använd höjd i stället för kalorier</string>
 	<string id="darkMode">Använd svart bakgrund</string>
 	<string id="modeInstant">Momentan</string>
 	<string id="mode5Seconds">5s gennemsnit</string>

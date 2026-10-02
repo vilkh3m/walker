@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Modul de ritm cardiac</string>
 	<string id="showHeartRateZoneTitle">Zona de ritm cardiac</string>
 	<string id="showSpeedInsteadOfPace">Utilizați viteza în loc de ritm</string>
+	<string id="showElevationInsteadOfCalories">Utilizați altitudinea în loc de calorii</string>
 	<string id="darkMode">Utilizați fundal negru</string>
 	<string id="modeInstant">Actual</string>
 	<string id="mode5Seconds">5 a doua medie</string>

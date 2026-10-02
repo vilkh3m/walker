@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Chế độ nhịp tim</string>
 	<string id="showHeartRateZoneTitle">Vùng nhịp tim</string>
 	<string id="showSpeedInsteadOfPace">Sử dụng tốc độ</string>
+	<string id="showElevationInsteadOfCalories">Sử dụng độ cao</string>
 	<string id="darkMode">Sử dụng nền đen</string>
 	<string id="modeInstant">Hiện hành</string>
 	<string id="mode5Seconds">Trung bình 5 giây</string>

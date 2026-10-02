@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Modalità del battito cardiaco</string>
 	<string id="showHeartRateZoneTitle">Zona di frequenza cardiaca</string>
 	<string id="showSpeedInsteadOfPace">Usa la velocità anziché il passo</string>
+	<string id="showElevationInsteadOfCalories">Usa l'altitudine anziché le calorie</string>
 	<string id="darkMode">Usa sfondo nero</string>
 	<string id="modeInstant">Istantaneo</string>
 	<string id="mode5Seconds">5s in media</string>

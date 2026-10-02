@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Način rada srca</string>
 	<string id="showHeartRateZoneTitle">Zona otkucaja srca</string>
 	<string id="showSpeedInsteadOfPace">Koristite brzinu</string>
+	<string id="showElevationInsteadOfCalories">Koristite visinu</string>
 	<string id="darkMode">Koristi crnu pozadinu</string>
 	<string id="modeInstant">Sadašnji</string>
 	<string id="mode5Seconds">Prosjek 5s</string>

@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Λειτουργία καρδιακού ρυθμού</string>
 	<string id="showHeartRateZoneTitle">Ζώνη καρδιακού ρυθμού</string>
 	<string id="showSpeedInsteadOfPace">Χρησιμοποιήστε ταχύτητα</string>
+	<string id="showElevationInsteadOfCalories">Χρησιμοποιήστε υψόμετρο</string>
 	<string id="darkMode">Μαύρος</string>
 	<string id="modeInstant">Αμεσος</string>
 	<string id="mode5Seconds">Μέσος όρος 5 δευτ</string>

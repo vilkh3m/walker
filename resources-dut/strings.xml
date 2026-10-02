@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Hartslag modus</string>
 	<string id="showHeartRateZoneTitle">Hartslagzone</string>
 	<string id="showSpeedInsteadOfPace">Gebruik snelheid in plaats van tempo</string>
+	<string id="showElevationInsteadOfCalories">Gebruik hoogte in plaats van calorieën</string>
 	<string id="darkMode">Gebruik zwarte achtergrund</string>
 	<string id="modeInstant">Direct</string>
 	<string id="mode5Seconds">5s gemiddeld</string>

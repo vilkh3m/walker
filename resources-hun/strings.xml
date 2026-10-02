@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Pulzus mód</string>
 	<string id="showHeartRateZoneTitle">Pulzusszám zóna</string>
 	<string id="showSpeedInsteadOfPace">Sebesség használata tempó helyett</string>
+	<string id="showElevationInsteadOfCalories">Magasság használata kalória helyett</string>
 	<string id="darkMode">Fekete háttér használata</string>
 	<string id="modeInstant">Azonnali</string>
 	<string id="mode5Seconds">5s átlag</string>

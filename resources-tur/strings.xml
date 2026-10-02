@@ -10,6 +10,7 @@
 	<string id="heartRateModeTitle">Kalp atış hızı modu</string>
 	<string id="showHeartRateZoneTitle">Kalp atış hızı bölgesi</string>
 	<string id="showSpeedInsteadOfPace">Tempo yerine hız kullan</string>
+	<string id="showElevationInsteadOfCalories">Kalori yerine yükseklik kullan</string>
 	<string id="darkMode">Siyah arka plan kullan</string>
 	<string id="modeInstant">Anlık</string>
 	<string id="mode5Seconds">5 sn ort.</string>
